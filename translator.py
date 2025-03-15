@@ -7,7 +7,6 @@ import pyttsx3
 import os
 from gtts import gTTS
 
-# Initialize speech engine
 engine = pyttsx3.init()
 engine.setProperty("rate", 150)
 
@@ -49,14 +48,12 @@ def swap_languages():
     from_lang_var.set(to_lang_var.get())
     to_lang_var.set(from_lang_var.get())
 
-# GUI Setup
 root = tk.Tk()
 root.title("Professional Language Translator")
 root.geometry("500x600")
 root.configure(bg="#222")
 root.resizable(False, False)
 
-# Load Background Image
 bg_image = Image.open("background.jpeg")
 bg_image = bg_image.resize((500, 600), Image.LANCZOS)
 bg_photo = ImageTk.PhotoImage(bg_image)
@@ -64,15 +61,12 @@ bg_photo = ImageTk.PhotoImage(bg_image)
 bg_label = tk.Label(root, image=bg_photo)
 bg_label.place(relwidth=1, relheight=1)
 
-# Style
 style = ttk.Style()
 style.configure("TButton", padding=10, relief="flat", background="#FF4C29", foreground="white")
 
-# Frame to center elements
 container = tk.Frame(root, bg="#333", bd=5)
 container.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
-# Language selection
 tk.Label(container, text="Choose Language", fg="white", bg="#333", font=("Arial", 12)).pack(pady=5)
 from_lang_var = tk.StringVar(value="en")
 to_lang_var = tk.StringVar(value="fr")
